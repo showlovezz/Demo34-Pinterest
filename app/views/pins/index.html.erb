@@ -3,7 +3,7 @@
 <% @pins.each do |pin| %>
   <ul>
     <li>
-      <% pin.title %>
+      <%= pin.title %>
       <%= pin.description %>
       <%= link_to "show", pin_path(pin) %>
       <%= link_to "edit", edit_pin_path(pin) %>

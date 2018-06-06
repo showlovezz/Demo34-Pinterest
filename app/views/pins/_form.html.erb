@@ -3,7 +3,7 @@
   <% if @pin.errors.any? %>
     <h2>We have some errors here!</h2>
     <ul>
-      <% @pin.errors.full_messages do |msg| %>
+      <% @pin.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
