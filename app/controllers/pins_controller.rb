@@ -1,6 +1,6 @@
 class PinsController < ApplicationController
 
-  before_action :find_pin, only: [:show, :edit, :update, :destroy]
+  before_action :find_pin, only: [:show, :edit, :update, :destroy, :upvote]
 
   def index
     @pins = Pin.order("created_at DESC")
@@ -37,6 +37,11 @@ class PinsController < ApplicationController
   def destroy
     @pin.destroy
     redirect_to pins_path, notcie: "Pin 被刪除"
+  end
+
+  def upvote
+    @pin.upvote_by current_user
+    redirect_to pin_path(@pin)
   end
 
   private

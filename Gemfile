@@ -38,6 +38,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'
 gem 'masonry-rails', '~> 0.2.4'
+gem 'acts_as_votable', '~> 0.11.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
