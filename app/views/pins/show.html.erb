@@ -1,7 +1,21 @@
-<h1>Show page</h1>
+<section id="section_pin_show">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
 
-<%= @pin.title %>
+        <div class="row">
+          <div class="col-md-6">
+            <%= image_tag @pin.image, class: "img-thumbnail" %>
+            <p class="text-center mt-2">Submitted by<%= @pin.user.email %></p>
+          </div>
+          <div class="col-md-6">
+            <h3 class="text-center"><%= @pin.title %></h3>
+            <hr>
+            <p class="text-muted"><%= @pin.description %></p>
+          </div>
+        </div>
 
-<%= @pin.description %>
-
-<%= @pin.user.email %>
+      </div>
+    </div>
+  </div>
+</section>

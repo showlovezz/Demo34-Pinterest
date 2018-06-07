@@ -1,0 +1,78 @@
+body {
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+// navbar
+nav {
+  .container {
+    .collapse {
+      ul {
+        li {
+          .nav-link {
+            color: white;
+            font-size: 20px;
+          }
+          .nav-link:hover {
+            color: #4D1F00;
+          }
+        }
+      }
+    }
+    .navbar-brand {
+      color: white;
+      font-size: 30px;
+      font-weight: 700;
+    }
+    .navbar-brand:hover {
+      color: #4D1F00;
+    }
+  }
+}
+
+// index
+#pins {
+  .row {
+    .card-columns {
+      @media (min-width: 576px) {
+        column-count: 2;
+      }
+      @media (min-width: 768px) {
+        column-count: 3;
+      }
+      @media (min-width: 992px) {
+        column-count: 4;
+      }
+      @media (min-width: 1200px) {
+        column-count: 5;
+        .card {
+          .card-body {
+          padding-top: 5px;
+          padding-bottom: 5px;
+            h5 {
+              margin: 0;
+            }
+          }
+        }
+        .card:hover {
+          box-shadow: 0 0 3px 3px #4D1F00;
+        }
+      }
+    }
+  }
+}
+
+// show
+#section_pin_show {
+  .row {
+    .col-md-8 {
+      background-color: white;
+      padding: 25px 25px 2px 25px;
+      border-radius: 10px;
+    }
+  }
+}
+
+
+
+

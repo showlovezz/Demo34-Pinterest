@@ -1,13 +1,22 @@
-<h1>Index Page</h1>
+<section id="pins">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
 
-<% @pins.each do |pin| %>
-  <ul>
-    <li>
-      <%= pin.title %>
-      <%= pin.description %>
-      <%= link_to "show", pin_path(pin) %>
-      <%= link_to "edit", edit_pin_path(pin) %>
-      <%= link_to "Delete", pin_path(pin), method: :delete, data: {confirm: "Are you sure ?"} %>
-    </li>
-  </ul>
-<% end %>
+        <div class="card-columns">
+          <% @pins.each do |pin| %>
+            <%= link_to pin_path(pin), style: "text-decoration: none;" do %>
+              <div class="card">
+                <%= image_tag pin.image, class: "card-img-top" %>
+                <div class="card-body text-center">
+                  <h5 class="card-title text-dark"><%= pin.title %></h5>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
