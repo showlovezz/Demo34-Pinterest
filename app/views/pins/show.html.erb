@@ -7,6 +7,15 @@
           <div class="col-md-6">
             <%= image_tag @pin.image, class: "img-thumbnail" %>
             <p class="text-center mt-2">Submitted by<%= @pin.user.email %></p>
+            <div class="btn-group d-flex justify-content-center mb-2" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-outline-dark">
+                <i class="fa fa-heart">Fuck</i>
+              </button>
+              <% if user_signed_in? %>
+                <%= link_to "Edit", edit_pin_path(@pin), class: "btn btn-outline-dark" %>
+                <%= link_to "Delete", pin_path(@pin), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-dark" %>
+              <% end %>
+            </div>
           </div>
           <div class="col-md-6">
             <h3 class="text-center"><%= @pin.title %></h3>
@@ -14,12 +23,6 @@
             <p class="text-muted"><%= @pin.description %></p>
           </div>
         </div>
-        <% if user_signed_in? %>
-          <div class="col-md-12 text-center">
-            <%= link_to "Edit", edit_pin_path(@pin), class: "action" %> |
-            <%= link_to "Delete", pin_path(@pin), method: :delete, data: {confirm: "Are you sure?"}, class: "action" %>
-          </div>
-        <% end %>
 
       </div>
     </div>
