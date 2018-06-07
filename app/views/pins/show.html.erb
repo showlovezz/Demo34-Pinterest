@@ -14,6 +14,12 @@
             <p class="text-muted"><%= @pin.description %></p>
           </div>
         </div>
+        <% if user_signed_in? %>
+          <div class="col-md-12 text-center">
+            <%= link_to "Edit", edit_pin_path(@pin), class: "action" %> |
+            <%= link_to "Delete", pin_path(@pin), method: :delete, data: {confirm: "Are you sure?"}, class: "action" %>
+          </div>
+        <% end %>
 
       </div>
     </div>

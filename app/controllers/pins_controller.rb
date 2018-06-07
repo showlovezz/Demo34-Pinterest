@@ -28,7 +28,7 @@ class PinsController < ApplicationController
 
   def update
     if @pin.update(pin_params)
-      redirect_to pins_path, notice: "Pin 修改成功"
+      redirect_to pin_path(@pin), notice: "Pin 修改成功"
     else
       redirect_to "edit", notice: "Pin 修改失敗"
     end

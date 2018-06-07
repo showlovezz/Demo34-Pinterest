@@ -66,13 +66,28 @@ nav {
 #section_pin_show {
   .row {
     .col-md-8 {
-      background-color: white;
-      padding: 25px 25px 2px 25px;
-      border-radius: 10px;
+      .row {
+        background-color: white;
+        border-radius: 10px;
+        padding: 25px 25px 2px 25px;
+      }
+      .col-md-12 {
+        margin-top: 5px;
+        .action {
+          color: white;
+        }
+      }
     }
   }
 }
 
-
-
-
+// form
+#section_pin_form {
+  .row {
+    .col-md-8 {
+      background-color: white;
+      border-radius: 10px;
+      padding: 25px;
+    }
+  }
+}

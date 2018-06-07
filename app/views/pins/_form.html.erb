@@ -1,23 +1,42 @@
-<%= form_for @pin do |f| %>
+<section id="section_pin_form">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
 
-  <% if @pin.errors.any? %>
-    <h2>We have some errors here!</h2>
-    <ul>
-      <% @pin.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
+        <%= form_for @pin do |f| %>
+          <% if @pin.errors.any? %>
+            <h2>We have some errors here!</h2>
+            <ul>
+              <% @pin.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          <% end %>
 
-  <%= f.label :title, "Title" %>
-  <%= f.text_field :title %>
+          <div class="form-group">
+            <%= f.label :title, "Title" %>
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
 
-  <%= f.label :description, "Description" %>
-  <%= f.text_area :description %>
+          <div class="form-group">
+            <%= f.label :description, "Description" %>
+            <%= f.text_area :description, class: "form-control", rows: "5" %>
+          </div>
 
-  <%= f.label :image, "Photo" %>
-  <%= f.file_field :image %>
+          <div class="form-group">
+            <div class="custom-file">
+              <%= f.file_field :image, class: "custom-file-input" %>
+              <%= f.label :image, "Choose file", class: "custom-file-label" %>
+            </div>
+          </div>
 
-  <%= f.submit %>
+          <div class="form-group">
+            <%= f.submit class: "btn btn-success" %>
+          </div>
 
-<% end %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</section>
